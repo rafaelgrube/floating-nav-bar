@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Floating Nav Bar</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+      @keyframes slide-nav-down {
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      nav.is-floating {
+        position: sticky;
+        top: 0;
+        transform: translateY(-100%);
+        animation: slide-nav-down 0.3s ease;
+        animation-fill-mode: forwards;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div>
+        <h1>Grube</h1>
+      </div>
+
+      <div>
+        <ul>
+          <li>Link</li>
+          <li>Link2</li>
+        </ul>
+      </div>
+    </nav>
+    <div class="content">
+      <section id="first" class="first">
+        <h2>First Section</h2>
+        <div class="cards">
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+        </div>
+      </section>
+      <section id="second" class="second">
+        <h2>Second Section</h2>
+        <div class="cards">
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      (function (nav) {
+        let observer = new IntersectionObserver(
+          (entries) => {
+            if (entries[0].intersectionRatio >= 0.25) {
+              nav.classList.add("is-floating");
+            } else {
+              nav.classList.remove("is-floating");
+            }
+          },
+          { threshold: 0.25 }
+        );
+        observer.observe(document.querySelector("#second"));
+      })(document.querySelector("nav"));
+    </script>
+  </body>
+</html>
